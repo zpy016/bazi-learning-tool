@@ -27,7 +27,6 @@ export default function DiZhiPage() {
 
   const handleSelect = (zhi) => {
     setSelectedZhi(selectedZhi === zhi ? null : zhi);
-    setRelationMode(null);
   };
 
   const getRelatedZhis = (zhi) => {
@@ -68,7 +67,7 @@ export default function DiZhiPage() {
         ].map(mode => (
           <button
             key={mode.key || 'default'}
-            onClick={() => { setRelationMode(mode.key); setSelectedZhi(null); }}
+            onClick={() => { setRelationMode(relationMode === mode.key ? null : mode.key); }}
             className={`px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2 transition-all ${
               relationMode === mode.key
                 ? 'bg-bazi-gold text-bazi-dark'

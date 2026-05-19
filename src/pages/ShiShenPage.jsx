@@ -4,7 +4,7 @@ import shishenData from '../data/shishen.json';
 import { Users, ArrowRight } from 'lucide-react';
 
 export default function ShiShenPage() {
-  const [riGan, setRiGan] = useState('丙');
+  const [riGan, setRiGan] = useState('癸');
   const [selectedShiShen, setSelectedShiShen] = useState(null);
 
   const shishenList = TIAN_GAN.map(gan => ({
