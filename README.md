@@ -80,7 +80,13 @@ bazi-learning-tool/
 - **PDF**：18课课程资料提取文本
 - **名人案例**：马云、郭晶晶、章子怡等
 
+## 🔄 自动部署
+
+本项目已配置 GitHub Actions CI/CD，推送代码到 `main` 分支后自动构建并部署到火山云服务器。
+
+查看部署状态：https://github.com/zpy016/bazi-learning-tool/actions
+
 ## 📄 License
 
-个人学习项目
+MIT
  
