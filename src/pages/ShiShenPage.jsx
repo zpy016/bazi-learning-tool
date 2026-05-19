@@ -148,10 +148,10 @@ export default function ShiShenPage() {
           <table className="w-full text-sm">
             <thead>
               <tr className="text-gray-400 border-b border-gray-700">
-                <th className="text-left py-2">关系</th>
-                <th className="text-left py-2">正（异性/有情）</th>
-                <th className="text-left py-2">偏（同性/无情）</th>
-                <th className="text-left py-2">类象</th>
+                <th className="text-center py-2">关系</th>
+                <th className="text-center py-2">正（异性/有情）</th>
+                <th className="text-center py-2">偏（同性/无情）</th>
+                <th className="text-center py-2">类象</th>
               </tr>
             </thead>
             <tbody>
@@ -163,10 +163,10 @@ export default function ShiShenPage() {
                 { rel: '同我', zheng: '劫财', pian: '比肩', lx: '兄弟、朋友、竞争' },
               ].map((row, idx) => (
                 <tr key={idx} className="border-b border-gray-800 hover:bg-white/5">
-                  <td className="py-3 text-bazi-gold">{row.rel}</td>
-                  <td className="py-3 text-green-400">{row.zheng}</td>
-                  <td className="py-3 text-orange-400">{row.pian}</td>
-                  <td className="py-3 text-gray-400">{row.lx}</td>
+                  <td className="py-3 text-center text-bazi-gold">{row.rel}</td>
+                  <td className="py-3 text-center text-green-400">{row.zheng}</td>
+                  <td className="py-3 text-center text-orange-400">{row.pian}</td>
+                  <td className="py-3 text-center text-gray-400">{row.lx}</td>
                 </tr>
               ))}
             </tbody>
