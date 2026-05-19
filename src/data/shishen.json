@@ -1,0 +1,112 @@
+[
+  {
+    "name": "正印",
+    "abbrev": "生我的异性",
+    "relation": "异性相生",
+    "yinyang": "母亲、长辈、贵人、老师",
+    "leixiang": "房子、车子、知识、文凭",
+    "xingge": "仁慈、有爱心、耐心",
+    "jixiong": "清高、自负、孤僻",
+    "zhiye": "两耳不闻窗外事，一心只读圣贤书",
+    "jiankang": "正神"
+  },
+  {
+    "name": "偏印(枭神)",
+    "abbrev": "生我的同性",
+    "relation": "同性相生",
+    "yinyang": "继母、偏门技术、玄学",
+    "leixiang": "悟性、灵感、创造力",
+    "xingge": "思维灵敏、逻辑推理强",
+    "jixiong": "主观、多疑、偏执",
+    "zhiye": "偏门技术、民间才学",
+    "jiankang": "偏神"
+  },
+  {
+    "name": "正官",
+    "abbrev": "克我的异性",
+    "relation": "异性相克",
+    "yinyang": "女人的丈夫、领导、老板、男人的女儿",
+    "leixiang": "道德、纪律、法律、工作",
+    "xingge": "重视名誉、认真负责",
+    "jixiong": "胆小怕事、压抑自我",
+    "zhiye": "正官为贵，容易受人尊敬",
+    "jiankang": "正神"
+  },
+  {
+    "name": "七杀(偏官)",
+    "abbrev": "克我的同性",
+    "relation": "同性相克",
+    "yinyang": "女人的情人、小人、敌人、男人的儿子",
+    "leixiang": "压力、疾病、灾难",
+    "xingge": "富有正义感、霸道",
+    "jixiong": "性急、暴躁、偏激",
+    "zhiye": "凡毁灭不了我的都会使我更强大",
+    "jiankang": "偏神"
+  },
+  {
+    "name": "正财",
+    "abbrev": "我克的异性",
+    "relation": "异性相耗",
+    "yinyang": "男人的妻子、工资收入",
+    "leixiang": "固定资产、稳定理财",
+    "xingge": "务实实干、勤劳节俭",
+    "jixiong": "斤斤计较、吝啬小气",
+    "zhiye": "不见兔子不撒鹰",
+    "jiankang": "正神"
+  },
+  {
+    "name": "偏财",
+    "abbrev": "我克的同性",
+    "relation": "同性相耗",
+    "yinyang": "男人的情人、男女命的父亲",
+    "leixiang": "投资收益、意外之财",
+    "xingge": "豪爽大方、商业头脑",
+    "jixiong": "急躁冲动、风流多情",
+    "zhiye": "天上掉馅饼指的就是偏财",
+    "jiankang": "偏神"
+  },
+  {
+    "name": "伤官",
+    "abbrev": "我生的异性",
+    "relation": "异性相泄",
+    "yinyang": "女人的儿子、男女的晚辈",
+    "leixiang": "才华、创造、表现、欲望",
+    "xingge": "活泼开朗、聪明过人",
+    "jixiong": "自命不凡、叛逆难管",
+    "zhiye": "最能体现自我意识",
+    "jiankang": "偏神"
+  },
+  {
+    "name": "食神",
+    "abbrev": "我生的同性",
+    "relation": "同性相泄",
+    "yinyang": "女人的女儿",
+    "leixiang": "福气、食欲、享受、审美",
+    "xingge": "言语动听、为人和善",
+    "jixiong": "不思进取、头脑迟钝",
+    "zhiye": "真正的富二代标志",
+    "jiankang": "正神"
+  },
+  {
+    "name": "比肩",
+    "abbrev": "同我的同性",
+    "relation": "同性相比",
+    "yinyang": "兄弟、朋友、同事",
+    "leixiang": "竞争、合作、破财",
+    "xingge": "独立、自主、有主见",
+    "jixiong": "独断专行、刚愎自用",
+    "zhiye": "无情之比，理性合作",
+    "jiankang": "正神"
+  },
+  {
+    "name": "劫财",
+    "abbrev": "同我的异性",
+    "relation": "异性相比",
+    "yinyang": "姐妹、合作伙伴",
+    "leixiang": "竞争、破财、人事纠纷",
+    "xingge": "讲义气、有江湖气",
+    "jixiong": "固执、冲动、赌性重",
+    "zhiye": "有情之比，情感合作",
+    "jiankang": "偏神"
+  }
+]

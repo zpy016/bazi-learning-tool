@@ -1,0 +1,62 @@
+[
+  {
+    "riGan": "甲",
+    "yueZhi": "丙+癸",
+    "yongShen": "庚+丙丁+戊己",
+    "shuoMing": "庚+丁+壬"
+  },
+  {
+    "riGan": "乙",
+    "yueZhi": "丙+癸",
+    "yongShen": "丙+癸",
+    "shuoMing": "癸+丙+戊"
+  },
+  {
+    "riGan": "丙",
+    "yueZhi": "壬+庚",
+    "yongShen": "壬",
+    "shuoMing": "壬+甲"
+  },
+  {
+    "riGan": "丁",
+    "yueZhi": "甲+庚",
+    "yongShen": "庚+甲",
+    "shuoMing": "甲+庚"
+  },
+  {
+    "riGan": "戊",
+    "yueZhi": "丙+甲+癸",
+    "yongShen": "丙+甲+癸",
+    "shuoMing": "甲+癸+丙"
+  },
+  {
+    "riGan": "己",
+    "yueZhi": "丙+庚+甲",
+    "yongShen": "甲+癸+丙",
+    "shuoMing": "丙+癸+甲"
+  },
+  {
+    "riGan": "庚",
+    "yueZhi": "戊+丙+甲+丁+壬",
+    "yongShen": "丁+甲+丙+庚",
+    "shuoMing": "甲+丁+壬癸"
+  },
+  {
+    "riGan": "辛",
+    "yueZhi": "己+壬+庚",
+    "yongShen": "壬+甲",
+    "shuoMing": "壬+甲"
+  },
+  {
+    "riGan": "壬",
+    "yueZhi": "庚+丙+戊",
+    "yongShen": "戊+庚+辛",
+    "shuoMing": "甲+庚"
+  },
+  {
+    "riGan": "癸",
+    "yueZhi": "辛+丙",
+    "yongShen": "庚+辛",
+    "shuoMing": "丙+辛+甲"
+  }
+]

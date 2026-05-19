@@ -1,0 +1,72 @@
+[
+  {
+    "name": "官杀格",
+    "type": "七杀格",
+    "condition": "月令透出七杀",
+    "characteristics": "印星化杀/食伤制杀/比劫抗杀",
+    "examples": "七杀透干，日干偏弱"
+  },
+  {
+    "name": "官杀格",
+    "type": "正官格",
+    "condition": "月令透出正官",
+    "characteristics": "印星化官/财星生官",
+    "examples": "正官透干，日干偏弱"
+  },
+  {
+    "name": "印格",
+    "type": "正印格",
+    "condition": "月令透出正印",
+    "characteristics": "官杀/食伤",
+    "examples": "正印透干，日干偏强"
+  },
+  {
+    "name": "印格",
+    "type": "偏印格(枭神)",
+    "condition": "月令透出偏印",
+    "characteristics": "财星制枭",
+    "examples": "偏印透干，日干偏强"
+  },
+  {
+    "name": "财格",
+    "type": "正财格",
+    "condition": "月令透出正财",
+    "characteristics": "食伤生财/财旺生官",
+    "examples": "正财透干，日干偏弱"
+  },
+  {
+    "name": "财格",
+    "type": "偏财格",
+    "condition": "月令透出偏财",
+    "characteristics": "食伤生财/财旺生官",
+    "examples": "偏财透干，日干偏弱"
+  },
+  {
+    "name": "食伤格",
+    "type": "食神格",
+    "condition": "月令透出食神",
+    "characteristics": "食神生财/食神吐秀",
+    "examples": "食神透干，日干偏弱"
+  },
+  {
+    "name": "食伤格",
+    "type": "伤官格",
+    "condition": "月令透出伤官",
+    "characteristics": "伤官生财/伤官配印",
+    "examples": "伤官透干，日干偏弱"
+  },
+  {
+    "name": "禄刃格",
+    "type": "建禄格",
+    "condition": "月令为日干禄位",
+    "characteristics": "财官相生/食伤生财",
+    "examples": "日干旺，月令临官"
+  },
+  {
+    "name": "禄刃格",
+    "type": "羊刃格",
+    "condition": "月令为日干帝旺",
+    "characteristics": "羊刃驾杀/财官相生",
+    "examples": "日干极旺，月令帝旺"
+  }
+]
