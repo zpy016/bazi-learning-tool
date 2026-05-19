@@ -61,10 +61,10 @@ export default function Home() {
       {/* Hero Section */}
       <div className="text-center py-8">
         <h1 className="text-4xl md:text-5xl font-serif font-bold text-bazi-gold mb-3">
-          八字命理学习平台
+          ✨ 八字命理互动学习平台 ✨
         </h1>
         <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-          通过互动式工具理解八字命理的核心知识，从五行生克到格局识别，循序渐进掌握命理精髓
+          通过可视化互动工具理解八字命理核心知识 —— 五行、天干、地支、十神、格局，循序渐进掌握命理精髓
         </p>
       </div>
 
