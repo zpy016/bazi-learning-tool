@@ -80,15 +80,7 @@ export default function NavMenu() {
           })}
         </nav>
 
-        <div className="absolute bottom-6 left-0 right-0 px-6">
-          <div className="p-4 rounded-lg bg-bazi-dark/50 border border-bazi-gold/10">
-            <p className="text-xs text-gray-400 mb-2">学习进度</p>
-            <div className="w-full h-2 bg-gray-700 rounded-full overflow-hidden">
-              <div className="h-full w-1/4 bg-gradient-to-r from-bazi-gold to-yellow-500 rounded-full" />
-            </div>
-            <p className="text-xs text-bazi-gold mt-1">已掌握 25%</p>
-          </div>
-        </div>
+
       </aside>
 
       {/* Overlay for mobile */}
