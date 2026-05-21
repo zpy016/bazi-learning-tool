@@ -13,7 +13,7 @@ import GeJuPage from './pages/GeJuPage';
 function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen flex">
+      <div className="min-h-screen flex bg-bazi-bg transition-colors duration-300">
         <NavMenu />
         <main className="flex-1 lg:ml-64 p-4 md:p-8 max-w-6xl mx-auto">
           <Routes>

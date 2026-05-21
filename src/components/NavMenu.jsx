@@ -10,9 +10,12 @@ import {
   BookOpen,
   Menu,
   X,
-  Scale
+  Scale,
+  Sun,
+  Moon
 } from 'lucide-react';
 import { useState } from 'react';
+import { useTheme } from '../contexts/ThemeContext';
 
 const navItems = [
   { path: '/', label: '八字排盘', icon: Home },
@@ -29,28 +32,38 @@ const navItems = [
 export default function NavMenu() {
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <>
       {/* Mobile toggle */}
       <button
         onClick={() => setMobileOpen(!mobileOpen)}
-        className="lg:hidden fixed top-4 left-4 z-50 p-2 bg-bazi-card rounded-lg border border-bazi-gold/30 text-bazi-gold"
+        className="lg:hidden fixed top-4 left-4 z-50 p-2 bg-bazi-card rounded-lg border border-bazi-accent/30 text-bazi-accent"
       >
         {mobileOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
 
       {/* Sidebar */}
       <aside className={`
-        fixed left-0 top-0 h-full w-64 bg-bazi-card border-r border-bazi-gold/20
+        fixed left-0 top-0 h-full w-64 bg-bazi-card border-r border-bazi-accent/20
         transform transition-transform duration-300 z-40
         ${mobileOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
       `}>
-        <div className="p-6">
-          <h1 className="text-2xl font-serif font-bold text-bazi-gold mb-1">
-            八字命理
-          </h1>
-          <p className="text-sm text-gray-400">互动学习平台</p>
+        <div className="p-6 flex items-center justify-between">
+          <div>
+            <h1 className="text-2xl font-serif font-bold text-bazi-accent mb-1">
+              八字命理
+            </h1>
+            <p className="text-sm text-bazi-text-muted">互动学习平台</p>
+          </div>
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-lg bg-bazi-surface text-bazi-text-secondary hover:text-bazi-accent transition-colors"
+            title={theme === 'light' ? '切换到黑夜模式' : '切换到白天模式'}
+          >
+            {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+          </button>
         </div>
 
         <nav className="px-4 pb-6 space-y-1">
@@ -65,22 +78,20 @@ export default function NavMenu() {
                 className={`
                   flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200
                   ${isActive 
-                    ? 'bg-bazi-gold/20 text-bazi-gold border border-bazi-gold/30' 
-                    : 'text-gray-300 hover:bg-white/5 hover:text-white'
+                    ? 'bg-bazi-accent/20 text-bazi-accent border border-bazi-accent/30' 
+                    : 'text-bazi-text-secondary hover:bg-bazi-surface hover:text-bazi-text'
                   }
                 `}
               >
                 <Icon size={20} />
                 <span className="font-medium">{item.label}</span>
                 {isActive && (
-                  <div className="ml-auto w-2 h-2 rounded-full bg-bazi-gold animate-pulse" />
+                  <div className="ml-auto w-2 h-2 rounded-full bg-bazi-accent animate-pulse" />
                 )}
               </Link>
             );
           })}
         </nav>
-
-
       </aside>
 
       {/* Overlay for mobile */}

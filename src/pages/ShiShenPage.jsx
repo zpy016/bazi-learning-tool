@@ -18,14 +18,14 @@ export default function ShiShenPage() {
   return (
     <div className="space-y-6">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-serif font-bold text-bazi-gold mb-2">十神关系计算器</h2>
-        <p className="text-gray-400">选择日干，查看其他天干与你的十神关系</p>
+        <h2 className="text-3xl font-serif font-bold text-bazi-accent mb-2">十神关系计算器</h2>
+        <p className="text-bazi-text-muted">选择日干，查看其他天干与你的十神关系</p>
       </div>
 
       {/* Ri Gan Selector */}
-      <div className="bg-bazi-card rounded-xl p-6 border border-bazi-gold/20">
+      <div className="bg-bazi-card rounded-xl p-6 border border-bazi-accent/20">
         <div className="flex flex-col items-center gap-4">
-          <p className="text-gray-400">选择日干（代表"我"）</p>
+          <p className="text-bazi-text-muted">选择日干（代表"我"）</p>
           <div className="flex gap-2 flex-wrap justify-center">
             {TIAN_GAN.map(gan => (
               <button
@@ -33,7 +33,7 @@ export default function ShiShenPage() {
                 onClick={() => { setRiGan(gan); setSelectedShiShen(null); }}
                 className={`w-12 h-12 rounded-full text-xl font-serif font-bold transition-all ${
                   riGan === gan
-                    ? 'ring-4 ring-bazi-gold scale-110'
+                    ? 'ring-4 ring-bazi-accent scale-110'
                     : 'hover:scale-105 opacity-70 hover:opacity-100'
                 }`}
                 style={{ backgroundColor: WX_COLOR[TG_WU_XING[gan]] }}
@@ -46,13 +46,13 @@ export default function ShiShenPage() {
             <span className="text-2xl font-serif font-bold" style={{ color: WX_COLOR[riGanWuxing] }}>
               {riGan}
             </span>
-            <span className="text-gray-400 ml-2">{riGanWuxing}{riGanYinyang} · 日干</span>
+            <span className="text-bazi-text-muted ml-2">{riGanWuxing}{riGanYinyang} · 日干</span>
           </div>
         </div>
       </div>
 
       {/* Relation Graph */}
-      <div className="bg-bazi-card rounded-xl p-6 border border-bazi-gold/20">
+      <div className="bg-bazi-card rounded-xl p-6 border border-bazi-accent/20">
         <div className="grid grid-cols-5 md:grid-cols-10 gap-3">
           {shishenList.map(({ gan, name, relation, zhengPian }) => {
             const isRiGan = gan === riGan;
@@ -65,10 +65,10 @@ export default function ShiShenPage() {
                 onClick={() => !isRiGan && setSelectedShiShen({ gan, name, relation, zhengPian, wuxing })}
                 className={`relative flex flex-col items-center p-3 rounded-lg transition-all ${
                   isRiGan
-                    ? 'bg-bazi-gold text-bazi-dark ring-2 ring-bazi-gold'
+                    ? 'bg-bazi-accent text-bazi-text ring-2 ring-bazi-accent'
                     : selectedShiShen?.gan === gan
-                      ? 'bg-white/10 ring-2 ring-bazi-gold'
-                      : 'bg-bazi-dark hover:bg-white/5'
+                      ? 'bg-bazi-surface ring-2 ring-bazi-accent'
+                      : 'bg-bazi-surface hover:bg-bazi-surface'
                 }`}
               >
                 <span 
@@ -77,11 +77,11 @@ export default function ShiShenPage() {
                 >
                   {gan}
                 </span>
-                <span className={`text-xs ${isRiGan ? 'text-bazi-dark/70' : 'text-gray-400'}`}>
+                <span className={`text-xs ${isRiGan ? 'text-bazi-text/70' : 'text-bazi-text-muted'}`}>
                   {isRiGan ? '日干' : name}
                 </span>
                 {!isRiGan && (
-                  <span className={`text-xs mt-1 ${zhengPian === '正' ? 'text-green-400' : 'text-orange-400'}`}>
+                  <span className={`text-xs mt-1 ${zhengPian === '正' ? 'text-green-600 dark:text-green-400' : 'text-orange-600 dark:text-orange-400'}`}>
                     {relation}
                   </span>
                 )}
@@ -93,7 +93,7 @@ export default function ShiShenPage() {
 
       {/* Selected Detail */}
       {selectedShiShen && (
-        <div className="bg-bazi-card rounded-xl p-6 border border-bazi-gold/30 animate-fade-in">
+        <div className="bg-bazi-card rounded-xl p-6 border border-bazi-accent/30 animate-fade-in">
           <div className="flex items-center gap-4 mb-4">
             <div 
               className="w-14 h-14 rounded-full flex items-center justify-center text-2xl font-serif font-bold"
@@ -102,10 +102,10 @@ export default function ShiShenPage() {
               {selectedShiShen.gan}
             </div>
             <div>
-              <h3 className="text-xl font-bold text-bazi-gold">
+              <h3 className="text-xl font-bold text-bazi-accent">
                 {selectedShiShen.name}
               </h3>
-              <p className="text-gray-400">
+              <p className="text-bazi-text-muted">
                 {selectedShiShen.relation} · {selectedShiShen.zhengPian}（{selectedShiShen.zhengPian === '正' ? '有情' : '无情'}）
               </p>
             </div>
@@ -118,21 +118,21 @@ export default function ShiShenPage() {
             return (
               <div className="space-y-3">
                 {info.leixiang && (
-                  <div className="bg-bazi-dark rounded-lg p-3">
-                    <p className="text-xs text-gray-500">类象</p>
-                    <p className="text-white">{info.leixiang}</p>
+                  <div className="bg-bazi-surface rounded-lg p-3">
+                    <p className="text-xs text-bazi-text-muted">类象</p>
+                    <p className="text-bazi-text">{info.leixiang}</p>
                   </div>
                 )}
                 {info.xingge && (
-                  <div className="bg-bazi-dark rounded-lg p-3">
-                    <p className="text-xs text-gray-500">性格特征</p>
-                    <p className="text-white">{info.xingge}</p>
+                  <div className="bg-bazi-surface rounded-lg p-3">
+                    <p className="text-xs text-bazi-text-muted">性格特征</p>
+                    <p className="text-bazi-text">{info.xingge}</p>
                   </div>
                 )}
                 {info.jixiong && (
-                  <div className="bg-bazi-dark rounded-lg p-3">
-                    <p className="text-xs text-gray-500">吉凶表现</p>
-                    <p className="text-white">{info.jixiong}</p>
+                  <div className="bg-bazi-surface rounded-lg p-3">
+                    <p className="text-xs text-bazi-text-muted">吉凶表现</p>
+                    <p className="text-bazi-text">{info.jixiong}</p>
                   </div>
                 )}
               </div>
@@ -142,12 +142,12 @@ export default function ShiShenPage() {
       )}
 
       {/* Understanding Table */}
-      <div className="bg-bazi-card rounded-xl p-6 border border-gray-700/50">
-        <h3 className="text-lg font-bold text-bazi-gold mb-4">十神关系速查表</h3>
+      <div className="bg-bazi-card rounded-xl p-6 border border-bazi-border">
+        <h3 className="text-lg font-bold text-bazi-accent mb-4">十神关系速查表</h3>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr className="text-gray-400 border-b border-gray-700">
+              <tr className="text-bazi-text-muted border-b border-bazi-border">
                 <th className="text-center py-2">关系</th>
                 <th className="text-center py-2">正（异性/有情）</th>
                 <th className="text-center py-2">偏（同性/无情）</th>
@@ -162,11 +162,11 @@ export default function ShiShenPage() {
                 { rel: '我生', zheng: '伤官', pian: '食神', lx: '才华、子女、表达' },
                 { rel: '同我', zheng: '劫财', pian: '比肩', lx: '兄弟、朋友、竞争' },
               ].map((row, idx) => (
-                <tr key={idx} className="border-b border-gray-800 hover:bg-white/5">
-                  <td className="py-3 text-center text-bazi-gold">{row.rel}</td>
-                  <td className="py-3 text-center text-green-400">{row.zheng}</td>
-                  <td className="py-3 text-center text-orange-400">{row.pian}</td>
-                  <td className="py-3 text-center text-gray-400">{row.lx}</td>
+                <tr key={idx} className="border-b border-bazi-border hover:bg-bazi-surface">
+                  <td className="py-3 text-center text-bazi-accent">{row.rel}</td>
+                  <td className="py-3 text-center text-green-600 dark:text-green-400">{row.zheng}</td>
+                  <td className="py-3 text-center text-orange-600 dark:text-orange-400">{row.pian}</td>
+                  <td className="py-3 text-center text-bazi-text-muted">{row.lx}</td>
                 </tr>
               ))}
             </tbody>

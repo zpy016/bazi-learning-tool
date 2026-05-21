@@ -4,23 +4,50 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ========== 白天模式（默认） ========== */
 :root {
-  --wood: #4CAF50;
-  --fire: #F44336;
-  --earth: #FFC107;
-  --metal: #FFD700;
-  --water: #2196F3;
-  --bg-dark: #1a1a2e;
-  --bg-card: #16213e;
-  --accent: #e94560;
-  --gold: #d4af37;
+  /* 五行颜色 */
+  --wx-wood: #10B981;
+  --wx-fire: #EF4444;
+  --wx-earth: #92400E;
+  --wx-metal: #F59E0B;
+  --wx-water: #3B82F6;
+
+  /* 界面核心色 */
+  --bazi-bg: #FAFAFA;
+  --bazi-card: #FFFFFF;
+  --bazi-surface: #F5F5F5;
+  --bazi-text: #1A1A1A;
+  --bazi-text-secondary: #404040;
+  --bazi-text-muted: #737373;
+  --bazi-accent: #6366F1;
+  --bazi-border: #E5E5E5;
+}
+
+/* ========== 黑夜模式 ========== */
+.dark {
+  --wx-wood: #34D399;
+  --wx-fire: #F87171;
+  --wx-earth: #B45309;
+  --wx-metal: #FBBF24;
+  --wx-water: #60A5FA;
+
+  --bazi-bg: #0A0A0A;
+  --bazi-card: #1A1A1A;
+  --bazi-surface: #262626;
+  --bazi-text: #FAFAFA;
+  --bazi-text-secondary: #D4D4D4;
+  --bazi-text-muted: #A3A3A3;
+  --bazi-accent: #818CF8;
+  --bazi-border: #333333;
 }
 
 body {
   font-family: 'Noto Sans SC', system-ui, sans-serif;
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  background-color: var(--bazi-bg);
   min-height: 100vh;
-  color: #f5f0e8;
+  color: var(--bazi-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .font-serif {
@@ -57,18 +84,18 @@ body {
   transform: rotateY(180deg);
 }
 
-/* 五行颜色类 */
-.bg-wood { background-color: var(--wood); }
-.bg-fire { background-color: var(--fire); }
-.bg-earth { background-color: var(--earth); }
-.bg-metal { background-color: var(--metal); }
-.bg-water { background-color: var(--water); }
+/* 五行颜色工具类 */
+.bg-wood { background-color: var(--wx-wood); }
+.bg-fire { background-color: var(--wx-fire); }
+.bg-earth { background-color: var(--wx-earth); }
+.bg-metal { background-color: var(--wx-metal); }
+.bg-water { background-color: var(--wx-water); }
 
-.text-wood { color: var(--wood); }
-.text-fire { color: var(--fire); }
-.text-earth { color: var(--earth); }
-.text-metal { color: var(--metal); }
-.text-water { color: var(--water); }
+.text-wood { color: var(--wx-wood); }
+.text-fire { color: var(--wx-fire); }
+.text-earth { color: var(--wx-earth); }
+.text-metal { color: var(--wx-metal); }
+.text-water { color: var(--wx-water); }
 
 /* 滚动条美化 */
 ::-webkit-scrollbar {
@@ -76,24 +103,34 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-dark);
+  background: var(--bazi-bg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--gold);
+  background: var(--bazi-accent);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #b8960c;
+  background: var(--bazi-text-muted);
 }
 
 /* 动画 */
 @keyframes glow {
-  0%, 100% { box-shadow: 0 0 5px rgba(212, 175, 55, 0.3); }
-  50% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.6); }
+  0%, 100% { box-shadow: 0 0 5px rgba(99, 102, 241, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(99, 102, 241, 0.6); }
 }
 
 .glow-effect {
   animation: glow 2s ease-in-out infinite;
+}
+
+/* 暗色模式下 glow 调整 */
+.dark .glow-effect {
+  animation: glow-dark 2s ease-in-out infinite;
+}
+
+@keyframes glow-dark {
+  0%, 100% { box-shadow: 0 0 5px rgba(129, 140, 248, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(129, 140, 248, 0.6); }
 }

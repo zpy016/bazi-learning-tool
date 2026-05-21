@@ -41,8 +41,8 @@ export default function GeJuPage() {
   return (
     <div className="space-y-6">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-serif font-bold text-bazi-gold mb-2">格局识别</h2>
-        <p className="text-gray-400">学习八字格局，练习识别技巧</p>
+        <h2 className="text-3xl font-serif font-bold text-bazi-accent mb-2">格局识别</h2>
+        <p className="text-bazi-text-muted">学习八字格局，练习识别技巧</p>
       </div>
 
       {/* Tabs */}
@@ -51,8 +51,8 @@ export default function GeJuPage() {
           onClick={() => setActiveTab('learn')}
           className={`px-6 py-2 rounded-full font-medium transition-all ${
             activeTab === 'learn'
-              ? 'bg-bazi-gold text-bazi-dark'
-              : 'bg-bazi-card text-gray-400 border border-gray-700'
+              ? 'bg-bazi-accent text-bazi-text'
+              : 'bg-bazi-card text-bazi-text-muted border border-bazi-border'
           }`}
         >
           格局速查
@@ -61,8 +61,8 @@ export default function GeJuPage() {
           onClick={() => setActiveTab('practice')}
           className={`px-6 py-2 rounded-full font-medium transition-all ${
             activeTab === 'practice'
-              ? 'bg-bazi-gold text-bazi-dark'
-              : 'bg-bazi-card text-gray-400 border border-gray-700'
+              ? 'bg-bazi-accent text-bazi-text'
+              : 'bg-bazi-card text-bazi-text-muted border border-bazi-border'
           }`}
         >
           识别练习
@@ -74,33 +74,33 @@ export default function GeJuPage() {
           {/* GeJu List */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {gejuData.map((geju, idx) => (
-              <div key={idx} className="bg-bazi-card rounded-xl p-5 border border-gray-700/50 hover:border-bazi-gold/30 transition-all">
+              <div key={idx} className="bg-bazi-card rounded-xl p-5 border border-bazi-border hover:border-bazi-accent/30 transition-all">
                 <div className="flex items-center gap-3 mb-3">
-                  <BookOpen className="text-bazi-gold" size={20} />
-                  <h3 className="text-lg font-bold text-white">{geju.name}</h3>
-                  <span className="text-xs px-2 py-1 rounded-full bg-bazi-gold/20 text-bazi-gold">
+                  <BookOpen className="text-bazi-accent" size={20} />
+                  <h3 className="text-lg font-bold text-bazi-text">{geju.name}</h3>
+                  <span className="text-xs px-2 py-1 rounded-full bg-bazi-accent/20 text-bazi-accent">
                     {geju.type}
                   </span>
                 </div>
                 
                 {geju.condition && (
                   <div className="mb-3">
-                    <p className="text-xs text-gray-500">成格条件</p>
-                    <p className="text-sm text-gray-300">{geju.condition}</p>
+                    <p className="text-xs text-bazi-text-muted">成格条件</p>
+                    <p className="text-sm text-bazi-text-secondary">{geju.condition}</p>
                   </div>
                 )}
                 
                 {geju.characteristics && (
                   <div className="mb-3">
-                    <p className="text-xs text-gray-500">特征</p>
-                    <p className="text-sm text-gray-300">{geju.characteristics}</p>
+                    <p className="text-xs text-bazi-text-muted">特征</p>
+                    <p className="text-sm text-bazi-text-secondary">{geju.characteristics}</p>
                   </div>
                 )}
                 
                 {geju.examples && (
                   <div>
-                    <p className="text-xs text-gray-500">案例</p>
-                    <p className="text-sm text-bazi-gold">{geju.examples}</p>
+                    <p className="text-xs text-bazi-text-muted">案例</p>
+                    <p className="text-sm text-bazi-accent">{geju.examples}</p>
                   </div>
                 )}
               </div>
@@ -108,25 +108,25 @@ export default function GeJuPage() {
           </div>
 
           {/* Tips */}
-          <div className="bg-bazi-card rounded-xl p-6 border border-gray-700/50">
-            <h3 className="text-lg font-bold text-bazi-gold mb-3">格局判断要点</h3>
-            <ol className="space-y-2 text-sm text-gray-400 list-decimal list-inside">
-              <li>先看<strong className="text-white">月令</strong>（月支）——月令是格局的出发点</li>
-              <li>再看<strong className="text-white">天干透出</strong>什么——透出者成格</li>
+          <div className="bg-bazi-card rounded-xl p-6 border border-bazi-border">
+            <h3 className="text-lg font-bold text-bazi-accent mb-3">格局判断要点</h3>
+            <ol className="space-y-2 text-sm text-bazi-text-muted list-decimal list-inside">
+              <li>先看<strong className="text-bazi-text">月令</strong>（月支）——月令是格局的出发点</li>
+              <li>再看<strong className="text-bazi-text">天干透出</strong>什么——透出者成格</li>
               <li>判断透出的十神与日干的关系——生我/克我/我生/我克/同我</li>
-              <li>结合<strong className="text-white">身强身弱</strong>判断格局的成败</li>
+              <li>结合<strong className="text-bazi-text">身强身弱</strong>判断格局的成败</li>
             </ol>
           </div>
         </>
       ) : (
         <>
           {/* Practice Case */}
-          <div className="bg-bazi-card rounded-xl p-6 border border-bazi-gold/20">
+          <div className="bg-bazi-card rounded-xl p-6 border border-bazi-accent/20">
             <div className="flex justify-between items-center mb-4">
-              <h3 className="text-lg font-bold text-white">练习案例 #{currentCase + 1}</h3>
+              <h3 className="text-lg font-bold text-bazi-text">练习案例 #{currentCase + 1}</h3>
               <button
                 onClick={handleNextCase}
-                className="px-4 py-2 bg-bazi-dark rounded-lg text-sm text-bazi-gold hover:bg-bazi-gold/20 transition-all"
+                className="px-4 py-2 bg-bazi-surface rounded-lg text-sm text-bazi-accent hover:bg-bazi-accent/20 transition-all"
               >
                 下一题 →
               </button>
@@ -141,15 +141,15 @@ export default function GeJuPage() {
                 { label: '时柱', ...currentPractice.bazi.hour },
               ].map((pillar, idx) => (
                 <div key={idx} className="text-center">
-                  <p className="text-xs text-gray-500 mb-1">{pillar.label}</p>
+                  <p className="text-xs text-bazi-text-muted mb-1">{pillar.label}</p>
                   <div className="space-y-1">
                     <div className={`w-12 h-12 mx-auto rounded-lg flex items-center justify-center text-xl font-serif font-bold ${
-                      pillar.isDay ? 'bg-bazi-gold text-bazi-dark' : 'bg-bazi-dark border border-gray-700'
+                      pillar.isDay ? 'bg-bazi-accent text-bazi-text' : 'bg-bazi-surface border border-bazi-border'
                     }`}>
                       {pillar.gan}
                     </div>
                     <div className={`w-12 h-12 mx-auto rounded-lg flex items-center justify-center text-xl font-serif font-bold ${
-                      pillar.isDay ? 'bg-bazi-gold/30 text-bazi-gold border border-bazi-gold' : 'bg-bazi-dark border border-gray-700'
+                      pillar.isDay ? 'bg-bazi-accent/30 text-bazi-accent border border-bazi-accent' : 'bg-bazi-surface border border-bazi-border'
                     }`}>
                       {pillar.zhi}
                     </div>
@@ -159,7 +159,7 @@ export default function GeJuPage() {
             </div>
 
             {/* Question */}
-            <p className="text-center text-gray-300 mb-4">此八字属于什么格局？</p>
+            <p className="text-center text-bazi-text-secondary mb-4">此八字属于什么格局？</p>
 
             {/* Options */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
@@ -169,10 +169,10 @@ export default function GeJuPage() {
                   onClick={() => { setSelectedAnswer(option); setShowAnswer(true); }}
                   className={`py-2 px-4 rounded-lg text-sm font-medium transition-all ${
                     showAnswer && option === currentPractice.answer
-                      ? 'bg-green-600 text-white'
+                      ? 'bg-green-600 text-bazi-text'
                       : showAnswer && option === selectedAnswer && option !== currentPractice.answer
-                        ? 'bg-red-600 text-white'
-                        : 'bg-bazi-dark border border-gray-700 hover:border-bazi-gold text-gray-300'
+                        ? 'bg-red-600 text-bazi-text'
+                        : 'bg-bazi-surface border border-bazi-border hover:border-bazi-accent text-bazi-text-secondary'
                   }`}
                 >
                   {option}
@@ -184,7 +184,7 @@ export default function GeJuPage() {
             {!showAnswer && (
               <button
                 onClick={() => setShowAnswer(true)}
-                className="w-full py-2 text-sm text-bazi-gold hover:text-yellow-300 transition-all flex items-center justify-center gap-2"
+                className="w-full py-2 text-sm text-bazi-accent hover:text-bazi-accent transition-all flex items-center justify-center gap-2"
               >
                 <Lightbulb size={16} />
                 需要提示？
@@ -193,20 +193,20 @@ export default function GeJuPage() {
 
             {/* Answer Explanation */}
             {showAnswer && (
-              <div className="mt-4 bg-bazi-dark rounded-lg p-4 animate-fade-in">
+              <div className="mt-4 bg-bazi-surface rounded-lg p-4 animate-fade-in">
                 <div className="flex items-center gap-2 mb-2">
                   {isCorrect ? (
-                    <CheckCircle className="text-green-400" size={20} />
+                    <CheckCircle className="text-green-600 dark:text-green-400" size={20} />
                   ) : (
-                    <XCircle className="text-red-400" size={20} />
+                    <XCircle className="text-red-600 dark:text-red-400" size={20} />
                   )}
-                  <span className={`font-bold ${isCorrect ? 'text-green-400' : 'text-red-400'}`}>
+                  <span className={`font-bold ${isCorrect ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
                     {isCorrect ? '回答正确！' : `正确答案：${currentPractice.answer}`}
                   </span>
                 </div>
-                <p className="text-sm text-gray-300">{currentPractice.explanation}</p>
+                <p className="text-sm text-bazi-text-secondary">{currentPractice.explanation}</p>
                 {!isCorrect && (
-                  <p className="text-sm text-bazi-gold mt-2">提示：{currentPractice.hint}</p>
+                  <p className="text-sm text-bazi-accent mt-2">提示：{currentPractice.hint}</p>
                 )}
               </div>
             )}

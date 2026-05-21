@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -7,19 +8,22 @@ export default {
   theme: {
     extend: {
       colors: {
-        wood: { DEFAULT: '#4CAF50', light: '#81C784', dark: '#2E7D32' },
-        fire: { DEFAULT: '#F44336', light: '#EF5350', dark: '#C62828' },
-        earth: { DEFAULT: '#FFC107', light: '#FFD54F', dark: '#FF8F00' },
-        metal: { DEFAULT: '#FFD700', light: '#FFE082', dark: '#F57F17' },
-        water: { DEFAULT: '#2196F3', light: '#64B5F6', dark: '#1565C0' },
-        yin: { DEFAULT: '#9C27B0', light: '#CE93D8', dark: '#6A1B9A' },
-        yang: { DEFAULT: '#FF9800', light: '#FFB74D', dark: '#E65100' },
+        wx: {
+          wood: 'var(--wx-wood)',
+          fire: 'var(--wx-fire)',
+          earth: 'var(--wx-earth)',
+          metal: 'var(--wx-metal)',
+          water: 'var(--wx-water)',
+        },
         bazi: {
-          dark: '#1a1a2e',
-          card: '#16213e',
-          accent: '#e94560',
-          gold: '#d4af37',
-          cream: '#f5f0e8',
+          bg: 'var(--bazi-bg)',
+          card: 'var(--bazi-card)',
+          surface: 'var(--bazi-surface)',
+          text: 'var(--bazi-text)',
+          'text-secondary': 'var(--bazi-text-secondary)',
+          'text-muted': 'var(--bazi-text-muted)',
+          accent: 'var(--bazi-accent)',
+          border: 'var(--bazi-border)',
         }
       },
       fontFamily: {

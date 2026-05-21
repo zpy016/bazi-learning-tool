@@ -53,8 +53,8 @@ export default function DiZhiPage() {
   return (
     <div className="space-y-6">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-serif font-bold text-bazi-gold mb-2">十二地支探索器</h2>
-        <p className="text-gray-400">点击地支查看藏干、特性及相互关系</p>
+        <h2 className="text-3xl font-serif font-bold text-bazi-accent mb-2">十二地支探索器</h2>
+        <p className="text-bazi-text-muted">点击地支查看藏干、特性及相互关系</p>
       </div>
 
       {/* Relation Mode Toggle */}
@@ -70,8 +70,8 @@ export default function DiZhiPage() {
             onClick={() => { setRelationMode(relationMode === mode.key ? null : mode.key); }}
             className={`px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2 transition-all ${
               relationMode === mode.key
-                ? 'bg-bazi-gold text-bazi-dark'
-                : 'bg-bazi-card text-gray-400 border border-gray-700 hover:border-gray-500'
+                ? 'bg-bazi-accent text-bazi-text'
+                : 'bg-bazi-card text-bazi-text-muted border border-bazi-border hover:border-gray-500'
             }`}
           >
             <mode.icon size={16} />
@@ -98,7 +98,7 @@ export default function DiZhiPage() {
                 isSelected
                   ? 'ring-4 ring-white scale-125 z-10'
                   : isRelated
-                    ? 'scale-110 opacity-100 ring-2 ring-bazi-gold'
+                    ? 'scale-110 opacity-100 ring-2 ring-bazi-accent'
                     : selectedZhi
                       ? 'opacity-40'
                       : 'hover:scale-110'
@@ -117,8 +117,8 @@ export default function DiZhiPage() {
 
         {/* Center info */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-20 h-20 rounded-full bg-bazi-card border-2 border-bazi-gold/30 flex items-center justify-center">
-            <span className="text-bazi-gold font-serif font-bold text-sm text-center">
+          <div className="w-20 h-20 rounded-full bg-bazi-card border-2 border-bazi-accent/30 flex items-center justify-center">
+            <span className="text-bazi-accent font-serif font-bold text-sm text-center">
               {selectedZhi || '地支'}
             </span>
           </div>
@@ -127,7 +127,7 @@ export default function DiZhiPage() {
 
       {/* Detail Panel */}
       {selectedData && (
-        <div className="bg-bazi-card rounded-xl p-6 border border-bazi-gold/20 animate-fade-in">
+        <div className="bg-bazi-card rounded-xl p-6 border border-bazi-accent/20 animate-fade-in">
           <div className="flex items-center gap-3 mb-4">
             <div 
               className="w-14 h-14 rounded-full flex items-center justify-center text-2xl font-serif font-bold"
@@ -136,16 +136,16 @@ export default function DiZhiPage() {
               {selectedData.name}
             </div>
             <div>
-              <h3 className="text-xl font-bold text-white">
+              <h3 className="text-xl font-bold text-bazi-text">
                 {selectedData.name} - {selectedData.wuxing}{selectedData.yinyang}
               </h3>
-              <p className="text-gray-400 text-sm">{selectedData.teshu}</p>
+              <p className="text-bazi-text-muted text-sm">{selectedData.teshu}</p>
             </div>
           </div>
 
           {/* 藏干 */}
           <div className="mb-4">
-            <p className="text-sm text-gray-400 mb-2">藏干（由强到弱）</p>
+            <p className="text-sm text-bazi-text-muted mb-2">藏干（由强到弱）</p>
             <div className="flex gap-3">
               {selectedData.canggan && selectedData.canggan.split('、').map((gan, i) => (
                 <div key={i} className="flex flex-col items-center">
@@ -155,7 +155,7 @@ export default function DiZhiPage() {
                   >
                     {gan}
                   </span>
-                  <span className="text-xs text-gray-500 mt-1">
+                  <span className="text-xs text-bazi-text-muted mt-1">
                     {i === 0 ? '本气' : i === 1 ? '中气' : '余气'}
                   </span>
                 </div>
@@ -166,21 +166,21 @@ export default function DiZhiPage() {
           {/* 关系 */}
           <div className="grid grid-cols-3 gap-3">
             {selectedData.liuhe && (
-              <div className="bg-bazi-dark rounded-lg p-3 text-center">
-                <p className="text-xs text-gray-500">六合</p>
-                <p className="text-white font-medium">{selectedData.liuhe}</p>
+              <div className="bg-bazi-surface rounded-lg p-3 text-center">
+                <p className="text-xs text-bazi-text-muted">六合</p>
+                <p className="text-bazi-text font-medium">{selectedData.liuhe}</p>
               </div>
             )}
             {selectedData.sanhe && (
-              <div className="bg-bazi-dark rounded-lg p-3 text-center">
-                <p className="text-xs text-gray-500">三合</p>
-                <p className="text-white font-medium">{selectedData.sanhe}</p>
+              <div className="bg-bazi-surface rounded-lg p-3 text-center">
+                <p className="text-xs text-bazi-text-muted">三合</p>
+                <p className="text-bazi-text font-medium">{selectedData.sanhe}</p>
               </div>
             )}
             {selectedData.liuchong && (
-              <div className="bg-bazi-dark rounded-lg p-3 text-center">
-                <p className="text-xs text-gray-500">六冲</p>
-                <p className="text-red-400 font-medium">{selectedData.liuchong}</p>
+              <div className="bg-bazi-surface rounded-lg p-3 text-center">
+                <p className="text-xs text-bazi-text-muted">六冲</p>
+                <p className="text-red-600 dark:text-red-600 dark:text-red-400 font-medium">{selectedData.liuchong}</p>
               </div>
             )}
           </div>
@@ -188,13 +188,13 @@ export default function DiZhiPage() {
       )}
 
       {/* Tips */}
-      <div className="bg-bazi-card rounded-xl p-6 border border-gray-700/50">
-        <h3 className="text-lg font-bold text-bazi-gold mb-3">地支理解要点</h3>
-        <ul className="space-y-2 text-sm text-gray-400">
-          <li>• <strong className="text-white">藏干</strong>：每个地支中隐藏着1-3个天干，代表内在的力量层次</li>
-          <li>• <strong className="text-white">六合</strong>：两两地支相合，有合作、和合之意</li>
-          <li>• <strong className="text-white">三合</strong>：三个地支合成一局，力量强大（如申子辰合水局）</li>
-          <li>• <strong className="text-white">六冲</strong>：两两地支相冲，有冲突、变动之意</li>
+      <div className="bg-bazi-card rounded-xl p-6 border border-bazi-border">
+        <h3 className="text-lg font-bold text-bazi-accent mb-3">地支理解要点</h3>
+        <ul className="space-y-2 text-sm text-bazi-text-muted">
+          <li>• <strong className="text-bazi-text">藏干</strong>：每个地支中隐藏着1-3个天干，代表内在的力量层次</li>
+          <li>• <strong className="text-bazi-text">六合</strong>：两两地支相合，有合作、和合之意</li>
+          <li>• <strong className="text-bazi-text">三合</strong>：三个地支合成一局，力量强大（如申子辰合水局）</li>
+          <li>• <strong className="text-bazi-text">六冲</strong>：两两地支相冲，有冲突、变动之意</li>
         </ul>
       </div>
     </div>

@@ -87,8 +87,8 @@ export default function ShenQiangPage() {
   return (
     <div className="space-y-6">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-serif font-bold text-bazi-gold mb-2">身强身弱判断</h2>
-        <p className="text-gray-400">学习判断日干强弱的三个维度：得令、得地、得势</p>
+        <h2 className="text-3xl font-serif font-bold text-bazi-accent mb-2">身强身弱判断</h2>
+        <p className="text-bazi-text-muted">学习判断日干强弱的三个维度：得令、得地、得势</p>
       </div>
 
       {/* Mode Toggle */}
@@ -96,7 +96,7 @@ export default function ShenQiangPage() {
         <button
           onClick={() => setMode('learn')}
           className={`px-6 py-2 rounded-full font-medium transition-all ${
-            mode === 'learn' ? 'bg-bazi-gold text-bazi-dark' : 'bg-bazi-card text-gray-400 border border-gray-700'
+            mode === 'learn' ? 'bg-bazi-accent text-bazi-text' : 'bg-bazi-card text-bazi-text-muted border border-bazi-border'
           }`}
         >
           学习原理
@@ -104,7 +104,7 @@ export default function ShenQiangPage() {
         <button
           onClick={() => setMode('practice')}
           className={`px-6 py-2 rounded-full font-medium transition-all ${
-            mode === 'practice' ? 'bg-bazi-gold text-bazi-dark' : 'bg-bazi-card text-gray-400 border border-gray-700'
+            mode === 'practice' ? 'bg-bazi-accent text-bazi-text' : 'bg-bazi-card text-bazi-text-muted border border-bazi-border'
           }`}
         >
           判断练习
@@ -121,7 +121,7 @@ export default function ShenQiangPage() {
                 subtitle: '月令是否帮扶',
                 desc: '日干五行与月支五行相同或月支生日干，则为得令。',
                 example: '甲木生于寅月（寅属木）→ 得令',
-                color: 'from-green-600/20 to-green-900/20',
+                color: 'from-green-500/10 to-green-500/5 dark:from-green-600/20 dark:to-green-900/20',
                 borderColor: 'border-green-500/30'
               },
               { 
@@ -129,7 +129,7 @@ export default function ShenQiangPage() {
                 subtitle: '地支是否有根',
                 desc: '日支或地支藏干中有与日干同五行的天干，称为"有根"。',
                 example: '日干甲木，日支寅（藏甲木）→ 得地',
-                color: 'from-blue-600/20 to-blue-900/20',
+                color: 'from-blue-500/10 to-blue-500/5 dark:from-blue-600/20 dark:to-blue-900/20',
                 borderColor: 'border-blue-500/30'
               },
               { 
@@ -137,37 +137,37 @@ export default function ShenQiangPage() {
                 subtitle: '天干是否帮扶',
                 desc: '其他天干中有比劫（同五行）或印星（生我者），则为得势。',
                 example: '日干甲木，天干见甲乙或壬癸 → 得势',
-                color: 'from-purple-600/20 to-purple-900/20',
+                color: 'from-purple-500/10 to-purple-500/5 dark:from-purple-600/20 dark:to-purple-900/20',
                 borderColor: 'border-purple-500/30'
               },
             ].map((dim, idx) => (
               <div key={idx} className={`bg-gradient-to-br ${dim.color} rounded-xl p-6 border ${dim.borderColor}`}>
-                <h3 className="text-xl font-bold text-white mb-1">{dim.title}</h3>
-                <p className="text-sm text-gray-400 mb-3">{dim.subtitle}</p>
-                <p className="text-sm text-gray-300 mb-3">{dim.desc}</p>
-                <div className="bg-bazi-dark/50 rounded-lg p-3">
-                  <p className="text-xs text-gray-500">示例</p>
-                  <p className="text-sm text-bazi-gold">{dim.example}</p>
+                <h3 className="text-xl font-bold text-bazi-text mb-1">{dim.title}</h3>
+                <p className="text-sm text-bazi-text-muted mb-3">{dim.subtitle}</p>
+                <p className="text-sm text-bazi-text-secondary mb-3">{dim.desc}</p>
+                <div className="bg-bazi-surface/50 rounded-lg p-3">
+                  <p className="text-xs text-bazi-text-muted">示例</p>
+                  <p className="text-sm text-bazi-accent">{dim.example}</p>
                 </div>
               </div>
             ))}
           </div>
 
           {/* Summary */}
-          <div className="bg-bazi-card rounded-xl p-6 border border-gray-700/50">
-            <h3 className="text-lg font-bold text-bazi-gold mb-3">判断标准</h3>
+          <div className="bg-bazi-card rounded-xl p-6 border border-bazi-border">
+            <h3 className="text-lg font-bold text-bazi-accent mb-3">判断标准</h3>
             <div className="space-y-2 text-sm">
               <div className="flex items-center gap-3">
                 <div className="w-3 h-3 rounded-full bg-green-500" />
-                <p className="text-gray-300"><strong>身强</strong>：得令 + 得地 + 得势（三者占其二以上）</p>
+                <p className="text-bazi-text-secondary"><strong>身强</strong>：得令 + 得地 + 得势（三者占其二以上）</p>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                <p className="text-gray-300"><strong>中和</strong>：得令、得地、得势各占其一</p>
+                <p className="text-bazi-text-secondary"><strong>中和</strong>：得令、得地、得势各占其一</p>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-3 h-3 rounded-full bg-red-500" />
-                <p className="text-gray-300"><strong>身弱</strong>：三者中帮扶较少，克泄耗较多</p>
+                <p className="text-bazi-text-secondary"><strong>身弱</strong>：三者中帮扶较少，克泄耗较多</p>
               </div>
             </div>
           </div>
@@ -175,16 +175,16 @@ export default function ShenQiangPage() {
       ) : (
         <>
           {/* Practice */}
-          <div className="bg-bazi-card rounded-xl p-6 border border-bazi-gold/20">
+          <div className="bg-bazi-card rounded-xl p-6 border border-bazi-accent/20">
             <div className="flex justify-between items-center mb-4">
-              <h3 className="text-lg font-bold text-white">{currentPractice.name}</h3>
+              <h3 className="text-lg font-bold text-bazi-text">{currentPractice.name}</h3>
               <div className="flex gap-2">
-                <button onClick={handleReset} className="p-2 text-gray-400 hover:text-white">
+                <button onClick={handleReset} className="p-2 text-bazi-text-muted hover:text-bazi-text">
                   <RotateCcw size={18} />
                 </button>
                 <button
                   onClick={handleNextCase}
-                  className="px-3 py-1 bg-bazi-dark rounded-lg text-sm text-bazi-gold hover:bg-bazi-gold/20"
+                  className="px-3 py-1 bg-bazi-surface rounded-lg text-sm text-bazi-accent hover:bg-bazi-accent/20"
                 >
                   下一题
                 </button>
@@ -192,27 +192,27 @@ export default function ShenQiangPage() {
             </div>
 
             {/* Bazi Info */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6 bg-bazi-dark rounded-lg p-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6 bg-bazi-surface rounded-lg p-4">
               <div className="text-center">
-                <p className="text-xs text-gray-500">日干</p>
+                <p className="text-xs text-bazi-text-muted">日干</p>
                 <p className="text-2xl font-serif font-bold" style={{ color: WX_COLOR[riWuxing] }}>
                   {currentPractice.riGan}
                 </p>
-                <p className="text-xs text-gray-400">{riWuxing}{TG_YIN_YANG[currentPractice.riGan]}</p>
+                <p className="text-xs text-bazi-text-muted">{riWuxing}{TG_YIN_YANG[currentPractice.riGan]}</p>
               </div>
               <div className="text-center">
-                <p className="text-xs text-gray-500">月支</p>
-                <p className="text-2xl font-serif font-bold text-white">{currentPractice.yueZhi}</p>
-                <p className="text-xs text-gray-400">{yueWuxing}{DZ_WU_XING[currentPractice.yueZhi] === yueWuxing ? '' : ''}</p>
+                <p className="text-xs text-bazi-text-muted">月支</p>
+                <p className="text-2xl font-serif font-bold text-bazi-text">{currentPractice.yueZhi}</p>
+                <p className="text-xs text-bazi-text-muted">{yueWuxing}{DZ_WU_XING[currentPractice.yueZhi] === yueWuxing ? '' : ''}</p>
               </div>
               <div className="text-center">
-                <p className="text-xs text-gray-500">日支</p>
-                <p className="text-2xl font-serif font-bold text-white">{currentPractice.riZhi}</p>
-                <p className="text-xs text-gray-400">{DZ_WU_XING[currentPractice.riZhi]}</p>
+                <p className="text-xs text-bazi-text-muted">日支</p>
+                <p className="text-2xl font-serif font-bold text-bazi-text">{currentPractice.riZhi}</p>
+                <p className="text-xs text-bazi-text-muted">{DZ_WU_XING[currentPractice.riZhi]}</p>
               </div>
               <div className="text-center">
-                <p className="text-xs text-gray-500">其他天干</p>
-                <p className="text-lg font-serif font-bold text-white">
+                <p className="text-xs text-bazi-text-muted">其他天干</p>
+                <p className="text-lg font-serif font-bold text-bazi-text">
                   {currentPractice.otherGans.join(' ')}
                 </p>
               </div>
@@ -221,20 +221,20 @@ export default function ShenQiangPage() {
             {/* Step by Step */}
             <div className="space-y-3">
               {/* Step 1: 得令 */}
-              <div className={`rounded-lg p-4 transition-all ${step >= 1 ? 'bg-green-900/20 border border-green-500/30' : 'bg-bazi-dark'}`}>
+              <div className={`rounded-lg p-4 transition-all ${step >= 1 ? 'bg-green-500/10 dark:bg-green-900/20 border border-green-500/30' : 'bg-bazi-surface'}`}>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${step >= 1 ? 'bg-green-500 text-white' : 'bg-gray-700 text-gray-400'}`}>1</span>
-                    <span className="font-medium text-white">是否得令？</span>
+                    <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${step >= 1 ? 'bg-green-500 text-bazi-text' : 'bg-bazi-surface text-bazi-text-muted'}`}>1</span>
+                    <span className="font-medium text-bazi-text">是否得令？</span>
                   </div>
                   {step >= 1 && (
-                    <span className={`text-sm font-bold ${isDeLing ? 'text-green-400' : 'text-red-400'}`}>
+                    <span className={`text-sm font-bold ${isDeLing ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
                       {isDeLing ? '✓ 得令' : '✗ 不得令'}
                     </span>
                   )}
                 </div>
                 {step >= 1 && (
-                  <p className="text-sm text-gray-400 mt-2">
+                  <p className="text-sm text-bazi-text-muted mt-2">
                     日干{currentPractice.riGan}属{riWuxing}，月支{currentPractice.yueZhi}属{yueWuxing}。
                     {isDeLing ? `月支${yueWuxing === riWuxing ? '与日干同五行' : '生助日干'}，故得令。` : '月支不帮扶日干，故不得令。'}
                   </p>
@@ -242,20 +242,20 @@ export default function ShenQiangPage() {
               </div>
 
               {/* Step 2: 得地 */}
-              <div className={`rounded-lg p-4 transition-all ${step >= 2 ? 'bg-blue-900/20 border border-blue-500/30' : 'bg-bazi-dark'}`}>
+              <div className={`rounded-lg p-4 transition-all ${step >= 2 ? 'bg-blue-500/10 dark:bg-blue-900/20 border border-blue-500/30' : 'bg-bazi-surface'}`}>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${step >= 2 ? 'bg-blue-500 text-white' : 'bg-gray-700 text-gray-400'}`}>2</span>
-                    <span className="font-medium text-white">是否得地？</span>
+                    <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${step >= 2 ? 'bg-blue-500 text-bazi-text' : 'bg-bazi-surface text-bazi-text-muted'}`}>2</span>
+                    <span className="font-medium text-bazi-text">是否得地？</span>
                   </div>
                   {step >= 2 && (
-                    <span className={`text-sm font-bold ${isDeDi ? 'text-blue-400' : 'text-red-400'}`}>
+                    <span className={`text-sm font-bold ${isDeDi ? 'text-blue-600 dark:text-blue-400' : 'text-red-600 dark:text-red-400'}`}>
                       {isDeDi ? '✓ 得地' : '✗ 不得地'}
                     </span>
                   )}
                 </div>
                 {step >= 2 && (
-                  <p className="text-sm text-gray-400 mt-2">
+                  <p className="text-sm text-bazi-text-muted mt-2">
                     日支{currentPractice.riZhi}藏干：{riZhiCangGan.join('、')}。
                     {hasRootInRiZhi ? '日支有根，' : '日支无根，'}
                     {hasRootInOthers ? '其他地支也有根。' : '其他地支无根。'}
@@ -265,26 +265,26 @@ export default function ShenQiangPage() {
               </div>
 
               {/* Step 3: 得势 */}
-              <div className={`rounded-lg p-4 transition-all ${step >= 3 ? 'bg-purple-900/20 border border-purple-500/30' : 'bg-bazi-dark'}`}>
+              <div className={`rounded-lg p-4 transition-all ${step >= 3 ? 'bg-purple-500/10 dark:bg-purple-900/20 border border-purple-500/30' : 'bg-bazi-surface'}`}>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${step >= 3 ? 'bg-purple-500 text-white' : 'bg-gray-700 text-gray-400'}`}>3</span>
-                    <span className="font-medium text-white">是否得势？</span>
+                    <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${step >= 3 ? 'bg-purple-500 text-bazi-text' : 'bg-bazi-surface text-bazi-text-muted'}`}>3</span>
+                    <span className="font-medium text-bazi-text">是否得势？</span>
                   </div>
                   {step >= 3 && (
-                    <span className={`text-sm font-bold ${isDeShi ? 'text-purple-400' : 'text-red-400'}`}>
+                    <span className={`text-sm font-bold ${isDeShi ? 'text-purple-600 dark:text-purple-400' : 'text-red-600 dark:text-red-400'}`}>
                       {isDeShi ? '✓ 得势' : '✗ 不得势'}
                     </span>
                   )}
                 </div>
                 {step >= 3 && (
-                  <p className="text-sm text-gray-400 mt-2">
+                  <p className="text-sm text-bazi-text-muted mt-2">
                     其他天干对日干的关系：
                     {currentPractice.otherGans.map((g, i) => {
                       const ss = getShiShen(currentPractice.riGan, g);
                       return (
                         <span key={i} className="inline-block mr-3">
-                          {g}→<span className={ss.name === '比肩' || ss.name === '劫财' || ss.name === '正印' || ss.name === '偏印' ? 'text-green-400' : 'text-red-400'}>{ss.name}</span>
+                          {g}→<span className={ss.name === '比肩' || ss.name === '劫财' || ss.name === '正印' || ss.name === '偏印' ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}>{ss.name}</span>
                         </span>
                       );
                     })}
@@ -297,7 +297,7 @@ export default function ShenQiangPage() {
               {step < 3 && (
                 <button
                   onClick={handleNextStep}
-                  className="w-full py-3 bg-bazi-gold/20 text-bazi-gold rounded-lg hover:bg-bazi-gold/30 transition-all flex items-center justify-center gap-2"
+                  className="w-full py-3 bg-bazi-accent/20 text-bazi-accent rounded-lg hover:bg-bazi-accent/30 transition-all flex items-center justify-center gap-2"
                 >
                   {step === 0 ? '开始判断' : '下一步'}
                   <ChevronRight size={18} />
@@ -306,14 +306,14 @@ export default function ShenQiangPage() {
 
               {/* Final Answer */}
               {step >= 3 && !showResult && (
-                <div className="bg-bazi-dark rounded-lg p-4">
-                  <p className="text-center text-white mb-3">综合以上三点，此命属于？</p>
+                <div className="bg-bazi-surface rounded-lg p-4">
+                  <p className="text-center text-bazi-text mb-3">综合以上三点，此命属于？</p>
                   <div className="flex gap-3 justify-center">
                     {['身强', '身弱', '中和'].map(ans => (
                       <button
                         key={ans}
                         onClick={() => { setUserAnswer(ans); setShowResult(true); }}
-                        className="px-6 py-2 bg-bazi-card border border-gray-700 rounded-lg text-white hover:border-bazi-gold transition-all"
+                        className="px-6 py-2 bg-bazi-card border border-bazi-border rounded-lg text-bazi-text hover:border-bazi-accent transition-all"
                       >
                         {ans}
                       </button>
@@ -324,14 +324,14 @@ export default function ShenQiangPage() {
 
               {/* Result */}
               {showResult && (
-                <div className={`rounded-lg p-4 ${isCorrect ? 'bg-green-900/20 border border-green-500/30' : 'bg-red-900/20 border border-red-500/30'}`}>
+                <div className={`rounded-lg p-4 ${isCorrect ? 'bg-green-500/10 dark:bg-green-900/20 border border-green-500/30' : 'bg-red-500/10 dark:bg-red-900/20 border border-red-500/30'}`}>
                   <div className="flex items-center gap-2 mb-2">
-                    {isCorrect ? <CheckCircle className="text-green-400" /> : <XCircle className="text-red-400" />}
-                    <span className={`font-bold ${isCorrect ? 'text-green-400' : 'text-red-400'}`}>
+                    {isCorrect ? <CheckCircle className="text-green-600 dark:text-green-400" /> : <XCircle className="text-red-600 dark:text-red-400" />}
+                    <span className={`font-bold ${isCorrect ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
                       {isCorrect ? '判断正确！' : `判断错误，正确答案是：${currentPractice.answer}`}
                     </span>
                   </div>
-                  <p className="text-sm text-gray-300">{currentPractice.explanation}</p>
+                  <p className="text-sm text-bazi-text-secondary">{currentPractice.explanation}</p>
                 </div>
               )}
             </div>

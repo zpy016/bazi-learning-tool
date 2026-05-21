@@ -54,13 +54,13 @@ export const DZ_CANG_GAN = {
   '亥': ['壬', '甲']
 };
 
-// 五行颜色
+// 五行颜色（使用 CSS 变量，自动响应白天/黑夜模式）
 export const WX_COLOR = {
-  '木': '#4CAF50',
-  '火': '#F44336',
-  '土': '#FFC107',
-  '金': '#FFD700',
-  '水': '#2196F3'
+  '木': 'var(--wx-wood)',
+  '火': 'var(--wx-fire)',
+  '土': 'var(--wx-earth)',
+  '金': 'var(--wx-metal)',
+  '水': 'var(--wx-water)'
 };
 
 // 五行生克关系
