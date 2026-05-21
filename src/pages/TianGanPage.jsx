@@ -61,9 +61,9 @@ export default function TianGanPage() {
             <div
               key={tg.name}
               onClick={() => toggleFlip(tg.name)}
-              className="flip-card cursor-pointer h-64"
+              className={`flip-card cursor-pointer h-64 ${isFlipped ? 'flipped' : ''}`}
             >
-              <div className={`flip-card-inner ${isFlipped ? 'flipped' : ''}`}>
+              <div className="flip-card-inner">
                 {/* Front */}
                 <div 
                   className="flip-card-front flex flex-col items-center justify-center p-4 border-2"
